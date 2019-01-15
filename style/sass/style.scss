@@ -4,8 +4,13 @@
             box-sizing: border-box;
         }
         
+        body {
+            margin: 2px 0;
+        }
+        
         $myBorder: 1px solid grey;
         $myGap:5px;
+        @import 'media';
         header {
             display: grid;
             grid-template-columns: 1fr 7fr;
@@ -56,7 +61,7 @@
                 grid-template-columns: 5fr 3fr;
                 grid-column-gap: $myGap;
                 .column {
-                    .main-header {
+                    #main-header {
                         border: $myBorder;
                         height: 150px;
                         display: flex;

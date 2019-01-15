@@ -1,0 +1,21 @@
+     @media screen and (max-width: 1024px) {
+         article {
+             display: grid;
+             grid-template-columns: 1fr;
+             grid-template-rows: 1fr;
+             div {
+                 grid-template-columns: 1fr;
+                 grid-template-rows: 1fr 1fr;
+                 img {
+                     display: flex;
+                     flex-direction: column;
+                 }
+             }
+         }
+     }
+     
+     @media screen and (max-width: 1024px) {
+         #main-header {
+             height: 100px;
+         }
+     }
