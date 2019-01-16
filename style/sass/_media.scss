@@ -1,21 +1,53 @@
-     @media screen and (max-width: 1024px) {
-         article {
-             display: grid;
-             grid-template-columns: 1fr;
-             grid-template-rows: 1fr;
-             div {
-                 grid-template-columns: 1fr;
-                 grid-template-rows: 1fr 1fr;
-                 img {
-                     display: flex;
-                     flex-direction: column;
-                 }
-             }
-         }
-     }
-     
-     @media screen and (max-width: 1024px) {
-         #main-header {
-             height: 100px;
-         }
-     }
+        @media (min-width: 360px) {
+            .container {
+                display: grid;
+                grid-template-columns: 3fr auto;
+                grid-template-rows: auto 1fr auto;
+                header {
+                    grid-template-columns: 2fr 7fr;
+                }
+            }
+            article {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 10px;
+            }
+            .center {
+                grid-template-columns: 1fr 2fr;
+                grid-column-gap: $myGap;
+                height: 100px;
+            }
+            section {
+                display: grid;
+                grid-template-columns: 5fr 3fr;
+                grid-column-gap: $myGap;
+            }
+        }
+        
+        @media(min-width: 1024px) {
+            main {
+                article {
+                    display: grid;
+                    grid-template-columns: 2fr 2fr;
+                    border: $myBorder;
+                    padding: 20px 5px 3px;
+                    div {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-column-gap: $myGap;
+                        margin: 5px;
+                    }
+                }
+                aside {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-column-gap: $myGap;
+                    div {
+                        min-height: 150px;
+                    }
+                }
+                #main-header {
+                    min-height: 150px;
+                }
+            }
+        }

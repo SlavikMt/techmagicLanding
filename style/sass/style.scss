@@ -5,17 +5,22 @@
         }
         
         body {
-            margin: 2px 0;
+            margin: 2px 1px;
         }
         
+        @import 'media';
         $myBorder: 1px solid grey;
         $myGap:5px;
-        @import 'media';
+        .container {
+            display: grid;
+            grid-template-columns: auto;
+        }
+        
         header {
             display: grid;
-            grid-template-columns: 1fr 7fr;
+            grid-template-columns: 6fr 3fr;
             grid-column-gap: $myGap;
-            margin: 3px 0;
+            //margin: 3px 0;
             div {
                 display: flex;
                 justify-content: center;
@@ -26,68 +31,59 @@
         
         main {
             article {
-                display: grid;
-                grid-template-columns: 2fr 2fr;
                 border: $myBorder;
                 padding: 20px 5px 3px;
                 margin: 3px 0;
                 div {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    grid-column-gap: $myGap;
-                    margin: 5px;
                     img {
                         background-color: grey;
-                        width: 100%;
-                        height: 250px;
+                        min-width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 5px 0;
                     }
                 }
             }
             .center {
                 display: grid;
-                grid-template-columns: 2fr 5fr;
-                grid-column-gap: $myGap;
-                margin: 3px 0;
+                grid-template-rows: 1fr 2fr;
                 div {
+                    min-height: 100px;
+                    border: $myBorder;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    border: $myBorder;
-                    height: 100px;
                 }
             }
             section {
-                display: grid;
-                grid-template-columns: 5fr 3fr;
-                grid-column-gap: $myGap;
                 .column {
                     #main-header {
+                        margin: 3px 0;
                         border: $myBorder;
-                        height: 150px;
+                        height: 100px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                     }
-                    aside {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        grid-column-gap: $myGap;
-                        div {
-                            border: $myBorder;
-                            height: 100px;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                        }
-                    }
-                    .main-footer {
+                }
+                aside {
+                    div {
                         border: $myBorder;
-                        height: 200px;
+                        width: 100%;
+                        height: 100px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        margin: 3px 0
                     }
+                }
+                .main-footer {
+                    border: $myBorder;
+                    height: 300px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 3px 0
                 }
                 nav {
                     border: $myBorder;
@@ -95,6 +91,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    margin: 3px 0;
                     li {
                         list-style-type: none;
                         a {

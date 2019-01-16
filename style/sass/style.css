@@ -6,47 +6,26 @@
 }
 
 body {
-  margin: 2px 0;
+  margin: 2px 1px;
 }
 
-@media screen and (max-width: 1024px) {
-  article {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-  }
-  article div {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-  }
-  article div img {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  #main-header {
-    height: 100px;
-  }
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+      grid-template-areas: 'header' 'article' 'navbar' 'footer';
 }
 
 header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 7fr;
-      grid-template-columns: 1fr 7fr;
+  -ms-grid-columns: 6fr 3fr;
+      grid-template-columns: 6fr 3fr;
   grid-column-gap: 5px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
   margin: 3px 0;
 }
 
@@ -64,40 +43,39 @@ header div {
 }
 
 main article {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 2fr;
-      grid-template-columns: 2fr 2fr;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: article;
   border: 1px solid grey;
   padding: 20px 5px 3px;
   margin: 3px 0;
 }
 
-main article div {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  grid-column-gap: 5px;
-  margin: 5px;
-}
-
 main article div img {
   background-color: grey;
-  width: 100%;
-  height: 250px;
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px 0;
 }
 
 main .center {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 5fr;
-      grid-template-columns: 2fr 5fr;
-  grid-column-gap: 5px;
-  margin: 3px 0;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
 }
 
 main .center div {
+  min-height: 100px;
+  border: 1px solid grey;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,41 +85,10 @@ main .center div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid grey;
-  height: 100px;
-}
-
-main section {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 5fr 3fr;
-      grid-template-columns: 5fr 3fr;
-  grid-column-gap: 5px;
 }
 
 main section .column #main-header {
-  border: 1px solid grey;
-  height: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-main section .column aside {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  grid-column-gap: 5px;
-}
-
-main section .column aside div {
+  margin: 3px 0;
   border: 1px solid grey;
   height: 100px;
   display: -webkit-box;
@@ -155,9 +102,24 @@ main section .column aside div {
           align-items: center;
 }
 
-main section .column .main-footer {
+main section aside div {
   border: 1px solid grey;
-  height: 200px;
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section .main-footer {
+  border: 1px solid grey;
+  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,6 +144,7 @@ main section nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 3px 0;
 }
 
 main section nav li {
@@ -215,6 +178,9 @@ main section nav li a:hover {
 }
 
 footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: footer;
   border: 1px solid grey;
   height: 40px;
   display: -webkit-box;
@@ -226,5 +192,73 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 360px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr auto;
+        grid-template-columns: 3fr auto;
+    -ms-grid-rows: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: "header header" "article navbar" "footer footer";
+  }
+  .container header {
+    -ms-grid-columns: 2fr 7fr;
+        grid-template-columns: 2fr 7fr;
+  }
+  article {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+  }
+  .center {
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+    grid-column-gap: 5px;
+    height: 100px;
+  }
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 5fr 3fr;
+        grid-template-columns: 5fr 3fr;
+    grid-column-gap: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  main article {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 2fr;
+        grid-template-columns: 2fr 2fr;
+    border: 1px solid grey;
+    padding: 20px 5px 3px;
+  }
+  main article div {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+    margin: 5px;
+  }
+  main aside {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+  }
+  main aside div {
+    min-height: 150px;
+  }
+  main #main-header {
+    min-height: 150px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
