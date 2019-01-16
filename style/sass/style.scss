@@ -1,126 +1,148 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        @import 'media';
-        $myBorder: 1px solid grey;
-        $myGap:5px;
-        .container {
-            display: grid;
-            grid-template-columns: auto;
-        }
-        
-        header {
-            display: grid;
-            grid-template-columns: 6fr 3fr;
-            grid-column-gap: $myGap;
-            //margin: 3px 0;
-            div {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: $myBorder;
-                background-color: red;
-            }
-        }
-        
-        main {
-            article {
-                border: $myBorder;
-                padding: 20px 5px 3px;
-                margin: 3px 0;
-                div {
-                    img {
-                        background-color: grey;
-                        min-width: 100%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin: 5px 0;
-                    }
-                }
-            }
-            .center {
-                display: grid;
-                grid-template-rows: 1fr 2fr;
-                div {
-                    min-height: 100px;
-                    border: $myBorder;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-            section {
-                .column {
-                    #main-header {
-                        margin: 3px 0;
-                        border: $myBorder;
-                        height: 100px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                }
-                aside {
-                    div {
-                        border: $myBorder;
-                        width: 100%;
-                        height: 100px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                }
-                .main-footer {
-                    border: $myBorder;
-                    height: 300px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 3px 0
-                }
-                nav {
-                    border: $myBorder;
-                    height: 100px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 3px 0;
-                    li {
-                        list-style-type: none;
-                        a {
-                            outline: none;
-                            text-decoration: none;
-                            padding: 2px 1px 0;
-                        }
-                        a:link {
-                            color: black;
-                        }
-                        a:visited {
-                            color: black;
-                        }
-                        a:focus {
-                            border-bottom: 1px solid;
-                            background: grey;
-                            color: rgb(25, 0, 255);
-                            font-weight: bold;
-                        }
-                        a:hover {
-                            border-bottom: 1px solid;
-                            background: gray;
-                        }
-                    }
-                }
-            }
-        }
-        
-        footer {
+    * {
+        margin: 1px 1px;
+        padding: 0;
+        box-sizing: border-box;
+        font-weight: bold;
+    }
+    
+    @import 'media';
+    $myBorder: 1px solid grey;
+    $myGap:5px;
+    header div,
+    article div p,
+    main div .img,
+    .center div,
+    #main-header,
+    aside div,
+    section .main-footer,
+    nav,
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    body {
+        display: grid;
+        background-color: floralwhite;
+    }
+    
+    header {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-columns: 6fr 3fr;
+        grid-column-gap: $myGap;
+        margin: 3px 0;
+        div {
             border: $myBorder;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: antiquewhite;
         }
+    }
+    
+    main {
+        article {
+            border: $myBorder;
+            padding: 20px 5px 3px;
+            margin: 3px 0;
+            background-color: darkseagreen;
+            div {
+                p {
+                    color: white;
+                }
+                .turtle {
+                    background-image: url(https://www.glyphicons.com/img/glyphicons/basic/2x/glyphicons-basic-405-turtle@2x.png);
+                }
+                .rabbit {
+                    background-image: url(https://www.glyphicons.com/img/glyphicons/basic/2x/glyphicons-basic-406-rabbit@2x.png);
+                }
+                .cat {
+                    background-image: url(https://www.glyphicons.com/img/glyphicons/basic/2x/glyphicons-basic-407-cat@2x.png);
+                }
+                .skull {
+                    background-image: url(https://www.glyphicons.com/img/glyphicons/basic/2x/glyphicons-basic-499-skull-crossbones@2x.png);
+                }
+                .img {
+                    background-color: grey;
+                    min-width: 100%;
+                    min-height: 250px;
+                    background-repeat: no-repeat;
+                    background-color: grey;
+                    background-position: center;
+                    background-size: cover;
+                }
+                margin: 5px 0;
+            }
+        }
+    }
+    
+    .center {
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        div {
+            min-height: 100px;
+            border: $myBorder;
+            background-color: aliceblue;
+        }
+    }
+    
+    section {
+        .column {
+            margin: 3px 0;
+            #main-header {
+                margin: 1px 0;
+                border: $myBorder;
+                height: 100px;
+                background-color: beige;
+            }
+        }
+        aside {
+            div {
+                border: $myBorder;
+                width: 100%;
+                height: 100px;
+                background-color: bisque;
+            }
+        }
+        .main-footer {
+            border: $myBorder;
+            height: 300px;
+            margin: 3px 0;
+            background-color: rgb(163, 154, 71);
+        }
+        nav {
+            border: $myBorder;
+            height: 100px;
+            margin: 3px 0;
+            background-color: burlywood;
+            li {
+                list-style-type: none;
+                a {
+                    outline: none;
+                    text-decoration: none;
+                    padding: 2px 1px 0;
+                }
+                a:link {
+                    color: black;
+                }
+                a:visited {
+                    color: black;
+                }
+                a:focus {
+                    border-bottom: 1px solid;
+                    background: grey;
+                    color: rgb(25, 0, 255);
+                    font-weight: bold;
+                }
+                a:hover {
+                    border-bottom: 1px solid;
+                    background: gray;
+                }
+            }
+        }
+    }
+    
+    footer {
+        border: $myBorder;
+        height: 40px;
+        background-color: chocolate;
+    }
